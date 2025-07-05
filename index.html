@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(145deg, #2f2f2f, #3b3b3b);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .popup {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 90%;
+      animation: popup-fade 0.4s ease-out;
+    }
+
+    .popup h2 {
+      font-size: 26px;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .popup p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .popup button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes popup-fade {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .popup {
+        padding: 20px;
+      }
+
+      .popup h2 {
+        font-size: 22px;
+      }
+
+      .popup p {
+        font-size: 15px;
+      }
+
+      .popup button {
+        padding: 10px 24px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay" id="popup">
+    <div class="popup">
+      <h2>Bem-vindo</h2>
+      <p>Aplicação inicial carregada com sucesso.</p>
+      <button onclick="fecharPopup()">Iniciar</button>
+    </div>
+  </div>
+
+  <script>
+    function fecharPopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
